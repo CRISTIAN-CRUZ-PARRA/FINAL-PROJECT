@@ -11,10 +11,10 @@ describe('Given a BookForm component', () => {
     // No hay accion especfica, solo renderizado
     
     // Assert
-    expect(screen.getByLabelText('Título:')).toBeInTheDocument();
-    expect(screen.getByLabelText('Autor:')).toBeInTheDocument();
-    expect(screen.getByLabelText('Año de publicación:')).toBeInTheDocument();
-    expect(screen.getByLabelText('Estado de lectura:')).toBeInTheDocument();
+    expect(screen.getByLabelText('Title:')).toBeInTheDocument();
+    expect(screen.getByLabelText('Author:')).toBeInTheDocument();
+    expect(screen.getByLabelText('Year of publication:')).toBeInTheDocument();
+    expect(screen.getByLabelText('Reading status:')).toBeInTheDocument();
   });
 
   test('When a book is provided Then the form should render with the book data', () => {
@@ -31,10 +31,10 @@ describe('Given a BookForm component', () => {
     // No hay accion especifica, solo renderizado
     
     // Assert
-    expect(screen.getByLabelText('Título:')).toHaveValue('Test Book');
-    expect(screen.getByLabelText('Autor:')).toHaveValue('Test Author');
-    expect(screen.getByLabelText('Año de publicación:')).toHaveValue(2024);
-    expect(screen.getByLabelText('Estado de lectura:')).toHaveValue('read');
+    expect(screen.getByLabelText('Title:')).toHaveValue('Test Book');
+    expect(screen.getByLabelText('Author:')).toHaveValue('Test Author');
+    expect(screen.getByLabelText('Year of publication:')).toHaveValue(2024);
+    expect(screen.getByLabelText('Reading status:')).toHaveValue('read');
   });
 
   test('When the form is submitted with new data Then onSubmit should be called with the form data', () => {
@@ -43,13 +43,13 @@ describe('Given a BookForm component', () => {
     render(<BookForm onSubmit={onSubmit} onCancel={() => {}} />);
 
     // Act
-    fireEvent.change(screen.getByLabelText('Título:'), {
+    fireEvent.change(screen.getByLabelText('Title:'), {
       target: { value: 'New Book' }
     });
-    fireEvent.change(screen.getByLabelText('Autor:'), {
+    fireEvent.change(screen.getByLabelText('Author:'), {
       target: { value: 'New Author' }
     });
-    fireEvent.click(screen.getByText('Añadir libro'));
+    fireEvent.click(screen.getByText('Add book'));
 
     // Assert
     expect(onSubmit).toHaveBeenCalledWith(expect.objectContaining({

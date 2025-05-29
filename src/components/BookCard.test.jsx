@@ -20,9 +20,9 @@ describe('Given a BookCard component', () => {
     
     // Assert
     expect(screen.getByText('Test Book')).toBeInTheDocument();
-    expect(screen.getByText('Autor: Test Author')).toBeInTheDocument();
-    expect(screen.getByText('Año: 2024')).toBeInTheDocument();
-    expect(screen.getByText('Estado: Leído')).toBeInTheDocument();
+    expect(screen.getByText('Test Author')).toBeInTheDocument();
+    expect(screen.getByText('2024')).toBeInTheDocument();
+    expect(screen.getByText('read')).toBeInTheDocument();
   });
 
   test('When the edit button is clicked Then onEdit should be called with the book data', () => {
@@ -31,7 +31,7 @@ describe('Given a BookCard component', () => {
     render(<BookCard book={mockBook} onEdit={onEdit} onDelete={() => {}} />);
     
     // Act
-    fireEvent.click(screen.getByText('Editar'));
+    fireEvent.click(screen.getByText('Edit'));
     
     // Assert
     expect(onEdit).toHaveBeenCalledWith(mockBook);
@@ -44,7 +44,7 @@ describe('Given a BookCard component', () => {
     render(<BookCard book={mockBook} onEdit={() => {}} onDelete={onDelete} />);
     
     // Act
-    fireEvent.click(screen.getByText('Eliminar'));
+    fireEvent.click(screen.getByText('Delete'));
     
     // Assert
     expect(window.confirm).toHaveBeenCalled();
