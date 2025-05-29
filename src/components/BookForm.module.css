@@ -41,13 +41,13 @@
 
 .form-group input:hover,
 .form-group select:hover {
-  border-color: #40a9ff;
+  border-color: #00ff5e;
 }
 
 .form-group input:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #1890ff;
+  border-color: #00ff5e;
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 
@@ -70,26 +70,15 @@
 }
 
 .submit-button {
-  background-color: #1890ff;
+  background-color: #087e16;
   color: white;
   border: 1px solid #1890ff;
-}
-
-.submit-button:hover {
-  background-color: #40a9ff;
-  border-color: #40a9ff;
 }
 
 .cancel-button {
   background-color: #fff;
   color: #666;
   border: 1px solid #d9d9d9;
-}
-
-.cancel-button:hover {
-  color: #40a9ff;
-  border-color: #40a9ff;
-  background-color: #fff;
 }
 
 .submit-button:disabled {

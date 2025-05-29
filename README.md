@@ -1,12 +1,73 @@
-# React + Vite
+# BookLibrary
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application for managing your personal book library.
 
-Currently, two official plugins are available:
+## Characteristics
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add new books
+- Edit existing books
+- Delete books
+- View the reading status of each book
+- Intuitive and responsive interface
 
-## Expanding the ESLint configuration
+## Technologies used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- Vite
+- CSS Modules
+- Vitest + React Testing Library
+- Husky + lint-staged
+- GitHub Actions
+
+## Requirements
+
+- Node.js (version 20 or higher)
+- npm
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/CRISTIAN-CRUZ-PARRA/FINAL-PROJECT
+```
+
+2. Install the dependencies:
+```bash
+npm install
+```
+
+3. Create a `.env` file in the root of the project with the following variable:
+```
+VITE_API_URL=[URL_OF_YOUR_API]
+```
+
+## Desarrollo
+
+To start the development server:
+```bash
+npm run dev
+```
+
+## Tests
+
+To run the tests:
+```bash
+npm test
+```
+
+## Build
+
+To create a production version:
+```bash
+npm run build
+```
+
+## Project structure
+
+```
+src/
+  ├── components/     # React Components
+  ├── hooks/         # Custom hooks
+  ├── test/          # Test configuration
+  └── App.jsx        # Main component
+```

@@ -20,7 +20,7 @@
 }
 
 .add-book-button {
-  background-color: #1890ff;
+  background-color: #087e16;
   color: white;
   border: none;
   padding: 0.625rem 1.25rem;
@@ -29,11 +29,6 @@
   font-size: 0.9375rem;
   transition: all 0.2s;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
-}
-
-.add-book-button:hover {
-  background-color: #40a9ff;
-  box-shadow: 0 2px 8px rgba(24, 144, 255, 0.35);
 }
 
 .books-grid {
@@ -71,6 +66,14 @@
   color: #666;
   font-size: 1rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+@media (min-width: 769px) {
+  .books-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
 }
 
 @media (max-width: 768px) {

@@ -20,7 +20,7 @@ const BookList = () => {
   };
 
   if (loading) {
-    return <div className={styles.loading}>Cargando libros...</div>;
+    return <div className={styles.loading}>Loading books...</div>;
   }
 
   if (error) {
@@ -30,12 +30,12 @@ const BookList = () => {
   return (
     <div className={styles['book-list-container']}>
       <div className={styles['book-list-header']}>
-        <h1>Mi Biblioteca</h1>
+        <h1>My Book Library</h1>
         <button 
           className={styles['add-book-button']}
           onClick={() => setShowForm(true)}
         >
-          Añadir Libro
+          Add book
         </button>
       </div>
 
@@ -66,7 +66,7 @@ const BookList = () => {
 
       {books.length === 0 && !showForm && (
         <div className={styles['no-books']}>
-          No hay libros en tu biblioteca. ¡Añade tu primer libro!
+          There are no books in your library. Add your first book!
         </div>
       )}
     </div>

@@ -5,19 +5,19 @@ const BookCard = ({ book, onEdit, onDelete }) => {
   const [isDeleting, setIsDeleting] = useState(false);
 
   const handleDelete = async () => {
-    if (window.confirm('¿Estás seguro de que quieres eliminar este libro?')) {
+    if (window.confirm('Are you sure you want to delete this book?')) {
       setIsDeleting(true);
       try {
         await onDelete(book.id);
       } catch (error) {
-        alert('Error al eliminar el libro');
+        alert('Error deleting book');
       } finally {
         setIsDeleting(false);
       }
     }
   };
 
-  const getStatusColor = (status) => {
+  const getStatusClass = (status) => {
     switch (status) {
       case 'read':
         return styles['status-read'];
@@ -32,30 +32,35 @@ const BookCard = ({ book, onEdit, onDelete }) => {
 
   return (
     <div className={styles['book-card']}>
-      <div className={styles['book-info']}>
-        <h3>{book.title}</h3>
-        <p className={styles.author}>Autor: {book.author}</p>
-        <p className={styles.year}>Año: {book.year}</p>
-        <p className={`${styles.status} ${getStatusColor(book.status)}`}>
-          Estado: {book.status === 'read' ? 'Leído' : 
-                  book.status === 'in-progress' ? 'En progreso' : 'Pendiente'}
-        </p>
+      <div className={styles['card-header']}>
+        <span className={styles['card-title']}>{book.title}</span>
+        <span className={styles['card-year']}>{book.year}</span>
       </div>
-      <div className={styles['book-actions']}>
-        <button 
-          onClick={() => onEdit(book)} 
-          className={styles['edit-button']}
-          disabled={isDeleting}
-        >
-          Editar
-        </button>
-        <button 
-          onClick={handleDelete} 
-          className={styles['delete-button']}
-          disabled={isDeleting}
-        >
-          {isDeleting ? 'Eliminando...' : 'Eliminar'}
-        </button>
+      <div className={styles['card-author']}>{book.author}</div>
+      <div className={styles['card-status']}>
+        <span className={`${styles['status-badge']} ${getStatusClass(book.status)}`}>
+          {book.status}
+        </span>
+      </div>
+      <div className={styles['card-actions']}>
+        <div>
+          <button 
+            onClick={() => onEdit(book)} 
+            className={styles['edit-btn']}
+            disabled={isDeleting}
+          >
+            Edit
+          </button>
+        </div>
+        <div>
+          <button 
+            onClick={handleDelete} 
+            className={styles['delete-btn']}
+            disabled={isDeleting}
+          >
+            {isDeleting ? 'Deleting...' : 'Delete'}
+          </button>
+        </div>
       </div>
     </div>
   );

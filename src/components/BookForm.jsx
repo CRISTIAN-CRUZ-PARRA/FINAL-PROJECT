@@ -14,7 +14,7 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
       <h2>{book ? 'Editar Libro' : 'Añadir Nuevo Libro'}</h2>
       
       <div className={styles['form-group']}>
-        <label htmlFor="title">Título:</label>
+        <label htmlFor="title">Title:</label>
         <input
           type="text"
           id="title"
@@ -22,12 +22,12 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
           value={formData.title}
           onChange={handleChange}
           required
-          placeholder="Título del libro"
+          placeholder="Title of the book"
         />
       </div>
 
       <div className={styles['form-group']}>
-        <label htmlFor="author">Autor:</label>
+        <label htmlFor="author">Author:</label>
         <input
           type="text"
           id="author"
@@ -35,12 +35,12 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
           value={formData.author}
           onChange={handleChange}
           required
-          placeholder="Nombre del autor"
+          placeholder="Author's name"
         />
       </div>
 
       <div className={styles['form-group']}>
-        <label htmlFor="year">Año de publicación:</label>
+        <label htmlFor="year">Year of publication:</label>
         <input
           type="number"
           id="year"
@@ -54,7 +54,7 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
       </div>
 
       <div className={styles['form-group']}>
-        <label htmlFor="status">Estado de lectura:</label>
+        <label htmlFor="status">Reading status:</label>
         <select
           id="status"
           name="status"
@@ -62,22 +62,22 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
           onChange={handleChange}
           required
         >
-          <option value="pending">Pendiente</option>
-          <option value="in-progress">En progreso</option>
-          <option value="read">Leído</option>
+          <option value="pending">pending</option>
+          <option value="in-progress">In progress</option>
+          <option value="read">Read</option>
         </select>
       </div>
 
       <div className={styles['form-actions']}>
         <button type="submit" className={styles['submit-button']}>
-          {book ? 'Guardar cambios' : 'Añadir libro'}
+          {book ? 'Save changes' : 'Add book'}
         </button>
         <button 
           type="button" 
           onClick={onCancel}
           className={styles['cancel-button']}
         >
-          Cancelar
+          Cancel
         </button>
       </div>
     </form>
